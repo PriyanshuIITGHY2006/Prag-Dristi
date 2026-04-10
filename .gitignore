@@ -5,43 +5,33 @@ dist/
 build/
 .eggs/
 
-# Data (raw downloads can be large)
 data/raw/
 data/processed/
 *.nc
 *.grib
 
-# Model checkpoints (weights too large for git)
 checkpoints/*.pt
 checkpoints/*.pth
 checkpoints/*.pkl
 checkpoints/training_curves.png
 checkpoints/forecast_plot.png
 checkpoints/flood_zoom.png
-# Keep results.json — it's small and documents performance
 
-# Environment
 .env
 .venv/
 venv/
 env/
 
-# Jupyter
 .ipynb_checkpoints/
 
-# Hydra outputs
 outputs/
 
-# Upload helper
 upload_to_kaggle.py
 
-# IDE
 .vscode/
 .idea/
 
-# CDS API key (never commit)
 .cdsapirc
 
-# OS
 .DS_Store
 Thumbs.db
