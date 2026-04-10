@@ -1,0 +1,30 @@
+seed: 42
+
+# Which station's discharge to predict
+target_station: Bahadurabad
+target_variable: discharge_m3s
+
+# Train / val / test split (temporal, not random)
+# Fractions must sum to 1.0
+train_frac: 0.70
+val_frac: 0.15
+test_frac: 0.15
+
+# Optimisation
+batch_size: 64
+epochs: 100
+lr: 1.0e-3
+weight_decay: 1.0e-5
+gradient_clip: 1.0
+
+# Early stopping
+patience: 15
+
+# Flood threshold for classification metrics (CSI, POD, FAR)
+# 57512 = 95th percentile of Bahadurabad discharge (practical alert level)
+# Official danger level = 98600 m3/s (too rare in data for meaningful metrics)
+flood_threshold: 57512.0
+
+# Output
+checkpoint_dir: checkpoints/
+log_every_n_epochs: 5

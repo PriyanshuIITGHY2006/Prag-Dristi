@@ -1,0 +1,49 @@
+# ERA5 reanalysis download parameters (via Copernicus CDS)
+era5:
+  variables:
+    - total_precipitation
+    - 2m_temperature
+    - surface_pressure
+    - volumetric_soil_water_layer_1
+    - u_component_of_wind_10m
+    - v_component_of_wind_10m
+  # Bounding box covering Assam + upstream Brahmaputra catchment [N, W, S, E]
+  area: [30.0, 86.0, 23.0, 98.0]
+  resolution: 0.25  # degrees
+  start_year: 2000
+  end_year: 2022
+  output_dir: data/raw/era5
+
+# GloFAS-ERA5 river discharge reanalysis (via Copernicus CDS)
+glofas:
+  variable: river_discharge_in_the_last_24_hours
+  area: [30.0, 86.0, 23.0, 98.0]
+  start_year: 2000
+  end_year: 2022
+  output_dir: data/raw/glofas
+
+# Discharge monitoring stations on the Brahmaputra
+stations:
+  - name: Bahadurabad
+    lat: 25.17
+    lon: 89.67
+    river: Brahmaputra
+    # Q > this value => flood warning (m³/s, from Bangladesh Water Development Board)
+    danger_discharge: 98600.0
+
+  - name: Guwahati
+    lat: 26.18
+    lon: 91.73
+    river: Brahmaputra
+    danger_discharge: 72000.0
+
+  - name: Dibrugarh
+    lat: 27.48
+    lon: 95.00
+    river: Brahmaputra
+    danger_discharge: 45000.0
+
+# IMD gridded daily rainfall (if you have the .nc files from IMD Pune)
+imd:
+  rainfall_nc: data/raw/imd/RF25_ind2000_rfp25.nc
+  area: [28.0, 89.5, 24.0, 97.0]  # Assam bounding box

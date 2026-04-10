@@ -1,0 +1,19 @@
+name: lstm_seq2seq
+
+# Input/output dimensions
+# Will be set automatically by feature engineering unless overridden
+input_size: null  # set at runtime from feature count
+output_size: 1    # predicting discharge at one station
+
+# Sequence lengths
+encoder_len: 30   # days of history fed to encoder
+decoder_len: 7    # days ahead to forecast
+
+# Architecture
+hidden_size: 128
+num_layers: 2
+dropout: 0.3
+attention: true   # Bahdanau (additive) attention on encoder outputs
+
+# Output head
+fc_hidden: 64

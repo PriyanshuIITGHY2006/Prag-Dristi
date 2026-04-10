@@ -1,0 +1,33 @@
+# Core
+numpy>=1.24
+pandas>=2.0
+xarray>=2023.1
+scipy>=1.11
+
+# Data download
+cdsapi>=0.6.1  # ERA5 and GloFAS via Copernicus CDS
+requests>=2.31
+
+# ML
+torch>=2.1
+scikit-learn>=1.3
+
+# Config
+hydra-core>=1.3
+omegaconf>=2.3
+
+# API
+fastapi>=0.104
+uvicorn[standard]>=0.24
+pydantic>=2.4
+
+# Dashboard
+streamlit>=1.28
+plotly>=5.18
+folium>=0.15
+streamlit-folium>=0.15
+
+# Utils
+tqdm>=4.66
+joblib>=1.3
+python-dotenv>=1.0
